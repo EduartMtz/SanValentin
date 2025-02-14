@@ -1,0 +1,95 @@
+/* Establecer fondo negro en toda la página */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+    background-color: black; /* Fondo negro */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del contenedor */
+.content {
+    text-align: center;
+}
+
+/* Estilo del texto */
+h1 {
+    font-size: 100px; /* Tamaño de letra grande */
+    color: #ffffff; /* Color del texto blanco */
+    text-align: center; /* Centrar el texto */
+    text-shadow: 
+        0 0 5px #e499e4, /* Contorno con el primer color (#73d9bc) */
+        0 0 10px #73d9bc, /* Contorno con el segundo color (#e499e4) */
+        0 0 15px #e499e4, 
+        0 0 20px #73d9bc,
+        0 0 25px #e499e4, /* Alterna entre los colores */
+        0 0 5px #73d9bc,
+        0 0 10px #e499e4,
+        0 0 15px #73d9bc,
+        0 0 20px #e499e4,
+        0 0 25px #73d9bc; /* Alterna entre los colores */
+    animation: contornoDesplazante 2s infinite alternate; /* Animación de desplazamiento */
+}
+
+/* Animación del contorno de las letras */
+@keyframes contornoDesplazante {
+    0% {
+        text-shadow: 
+            0 0 5px #e499e4, 
+            0 0 10px #e499e4, 
+            0 0 15px #e499e4,
+            0 0 20px #e499e4,
+            0 0 25px #e499e4,
+            0 0 5px #e499e4,
+            0 0 10px #e499e4,
+            0 0 15px #e499e4,
+            0 0 20px #e499e4,
+            0 0 25px #e499e4;
+    }
+    100% {
+        text-shadow: 
+            0 0 10px #73d9bc, /* Cambio de contorno con el primer color */
+            0 0 20px #73d9bc, /* Alterna los colores */
+            0 0 30px #73d9bc,
+            0 0 40px #73d9bc,
+            0 0 50px #73d9bc,
+            0 0 10px #73d9bc, /* Alterna entre colores también */
+            0 0 20px #73d9bc,
+            0 0 30px #73d9bc,
+            0 0 40px #73d9bc,
+            0 0 50px #73d9bc;
+    }
+}
+
+/* Estilo para el botón en forma de corazón */
+.heart-button {
+    display: inline-block;
+    background-color: #e499e4; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px 30px; /* Espaciado dentro del botón */
+    font-size: 24px; /* Tamaño del texto */
+    text-align: center; /* Centrar texto */
+    border-radius: 50px; /* Bordes redondeados */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px; /* Espaciado superior para alejar el botón del encabezado */
+}
+
+.heart-button::before {
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Color del corazón */
+}
+
+.heart-button:hover {
+    background-color: #73d9bc; /* Cambia el color al pasar el ratón */
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+}
